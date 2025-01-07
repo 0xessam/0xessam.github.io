@@ -214,3 +214,38 @@ footer {
 .footer-icons img:hover {
   transform: scale(1.1);
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem; /* Even smaller for mobile */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Smaller for mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Smaller for mobile */
+  }
+
+  h3 {
+    font-size: 1.25rem; /* Smaller for mobile */
+  }
+
+  h4 {
+    font-size: 1.1rem; /* Smaller for mobile */
+  }
+
+  h5 {
+    font-size: 1rem; /* Smaller for mobile */
+  }
+
+  h6 {
+    font-size: 0.9rem; /* Smaller for mobile */
+  }
+
+  .name-phosphorescent {
+    font-size: 1.5rem; /* Smaller for mobile */
+  }
+}
