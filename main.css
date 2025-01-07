@@ -1,0 +1,198 @@
+/* Variables */
+:root {
+  --border-radius: 5px;
+}
+
+/* Page background color */
+body {
+  background-color: rgba(18, 6, 29, 255);
+}
+
+/* Light mode colours */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f7f7f7;
+    --color-text: #37352f;
+  }
+}
+
+/* Dark mode colours */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #000d21;
+    --color-text: #e0e0e0;
+  }
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Jersey 10";
+  src: url("fonts/Jersey10.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Global Styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+/* Style for Your Name */
+.name-phosphorescent {
+  font-family: "Jersey 10", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #39ff14;
+  text-shadow:
+    0 0 5000px #39ff14,
+    0 0 10px #39ff14,
+    0 0 200px #39ff14;
+  font-size: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+section > * {
+  width: 100%;
+  max-width: calc(500px + 1rem);
+}
+
+.portrait {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+/* Smooth hover animations for list items */
+.projects-list li,
+.blogs-list li {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transform: scale(1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.projects-list li:hover,
+.blogs-list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projects-list li.loaded,
+.blogs-list li.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove clickable photo */
+.details-content img {
+  pointer-events: none;
+}
+
+/* Link styling */
+a {
+  color: #a363d7;
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: rgba(163, 99, 215, 0.1);
+}
+
+a:hover {
+  color: #a363d7;
+  background-color: rgba(163, 99, 215, 0.3);
+}
+
+/* Style for links inside project details */
+.details-content a {
+  color: #a363d7;
+  background-color: rgba(163, 99, 215, 0.1);
+}
+
+.details-content a:hover {
+  color: #a363d7;
+  background-color: rgba(163, 99, 215, 0.3);
+}
+
+/* Technologies Section */
+#technologies {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tech-icons img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.1);
+}
