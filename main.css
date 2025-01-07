@@ -50,7 +50,7 @@ body {
     0 0 5000px #39ff14,
     0 0 10px #39ff14,
     0 0 200px #39ff14;
-  font-size: 1.75rem; /* Reduced from 2rem */
+  font-size: 2rem; /* Reduced from 2rem */
   white-space: nowrap; /* Prevent line breaks */
 }
 
