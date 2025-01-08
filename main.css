@@ -1,76 +1,124 @@
 /* Variables */
 :root {
-  --border-radius: 5px;
+    --border-radius: 5px;
 }
 
 /* Page background color */
 body {
-  background-color: rgba(18, 6, 29, 255);
+    background-color: rgba(18, 6, 29, 255);
 }
 
 /* Light mode colours */
 @media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #f7f7f7;
-    --color-text: #37352f;
-  }
+    :root {
+        --color-bg: #f7f7f7;
+        --color-text: #37352f;
+    }
 }
 
 /* Dark mode colours */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #000d21;
-    --color-text: #e0e0e0;
-  }
+    :root {
+        --color-bg: #000d21;
+        --color-text: #e0e0e0;
+    }
 }
 
 /* Fonts */
 @font-face {
-  font-family: "Jersey 10";
-  src: url("fonts/Jersey10.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Jersey 10";
+    src: url("fonts/Jersey10.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Global Styles */
 body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem; /* Reduced from 1.5rem */
-  color: var(--color-text);
-  line-height: 1.4;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    line-height: 1.4;
 }
 
-/* Style for Your Name */
+/* Glitch Effect for Your Name */
 .name-phosphorescent {
-  font-family: "Jersey 10", serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #39ff14;
-  text-shadow:
-    0 0 5000px #39ff14,
-    0 0 10px #39ff14,
-    0 0 200px #39ff14;
-  font-size: 2rem; /* Reduced from 2rem */
-  white-space: nowrap; /* Prevent line breaks */
+    font-family: "Jersey 10", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #39ff14;
+    text-shadow: 0 0 5000px #39ff14, 0 0 10px #39ff14, 0 0 200px #39ff14;
+    font-size: 2rem;
+    white-space: nowrap;
+    position: relative;
+    animation: glitch 2s infinite;
 }
 
+@keyframes glitch {
+    0% {
+        transform: translateX(0);
+        color: #39ff14;
+    }
+
+    2% {
+        transform: translateX(-2px);
+        color: #4E9A26;
+    }
+
+    4% {
+        transform: translateX(2px);
+        color: #AC1212;
+    }
+
+    6% {
+        transform: translateX(0);
+        color: #39ff14;
+    }
+
+    8% {
+        transform: translateX(3px);
+        color: #4E9A26;
+    }
+
+    10% {
+        transform: translateX(-3px);
+        color: #AC1212;
+    }
+
+    12% {
+        transform: translateX(0);
+        color: #39ff14;
+    }
+
+    100% {
+        transform: translateX(0);
+        color: #39ff14;
+    }
+}
+
+/* Section Styles */
 section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
 }
 
-section > * {
-  width: 100%;
-  max-width: calc(500px + 1rem);
+    section > * {
+        width: 100%;
+        max-width: calc(500px + 1rem);
+    }
+
+/* Scale down the bio section to 90% */
+.bio-section {
+    transform: scale(0.9);
+    transform-origin: top center;
 }
 
 .portrait {
-  max-width: 150px;
-  border-radius: 50%;
-  margin-top: 1rem;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-top: 1rem;
 }
 
 h1,
@@ -79,175 +127,231 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
 }
 
 h1 {
-  font-size: 2rem; /* Reduced from 2.5rem */
-  text-align: center;
+    font-size: 2rem;
+    text-align: center;
 }
 
 h2 {
-  font-size: 1.75rem; /* Reduced from 2rem */
+    font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 1.5rem; /* Reduced from 1.75rem */
-  margin: 0;
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 h4 {
-  font-size: 1.25rem; /* Reduced from 1.5rem */
+    font-size: 1.25rem;
 }
 
 h5 {
-  font-size: 1.1rem; /* Reduced from 1.25rem */
+    font-size: 1.1rem;
 }
 
 h6 {
-  font-size: 1rem; /* Reduced from 1.1rem */
+    font-size: 1rem;
 }
+
+/* Style for the Projects section header */
+.projects-header {
+    position: relative; /* Ensure the container is a positioning context */
+    display: flex;
+    justify-content: space-between; /* Space between heading and "Open all" */
+    align-items: center; /* Vertically align items */
+    width: 100%;
+    max-width: calc(500px + 1rem); /* Match the section width */
+    margin-bottom: 1rem; /* Add some spacing below the header */
+}
+
+/* Style for the "Open all" text */
+.open-all {
+    margin-left: auto; /* Push "Open all" to the right */
+    color: #a363d7; /* Match link color */
+    cursor: pointer; /* Make it look clickable */
+    background-color: rgba(163, 99, 215, 0.1); /* Match link background */
+    padding: 2px 4px; /* Match link padding */
+    border-radius: 3px; /* Match link border radius */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+    .open-all:hover {
+        color: #a363d7; /* Match link hover color */
+        background-color: rgba(163, 99, 215, 0.3); /* Match link hover background */
+    }
 
 /* Smooth hover animations for list items */
 .projects-list li,
 .blogs-list li {
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  transform: scale(1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.projects-list li:hover,
-.blogs-list li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+    .projects-list li:hover,
+    .blogs-list li:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.projects-list li.loaded,
-.blogs-list li.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .projects-list li.loaded,
+    .blogs-list li.loaded {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 /* Remove clickable photo */
 .details-content img {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 /* Link styling */
 a {
-  color: #a363d7;
-  text-decoration: none;
-  padding: 2px 4px;
-  border-radius: 3px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: rgba(163, 99, 215, 0.1);
+    color: #a363d7;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: rgba(163, 99, 215, 0.1);
 }
 
-a:hover {
-  color: #a363d7;
-  background-color: rgba(163, 99, 215, 0.3);
-}
+    a:hover {
+        color: #a363d7;
+        background-color: rgba(163, 99, 215, 0.3);
+    }
 
 /* Style for links inside project details */
 .details-content a {
-  color: #a363d7;
-  background-color: rgba(163, 99, 215, 0.1);
+    color: #a363d7;
+    background-color: rgba(163, 99, 215, 0.1);
 }
 
-.details-content a:hover {
-  color: #a363d7;
-  background-color: rgba(163, 99, 215, 0.3);
-}
+    .details-content a:hover {
+        color: #a363d7;
+        background-color: rgba(163, 99, 215, 0.3);
+    }
 
 /* Technologies Section */
 #technologies {
-  text-align: center;
-  margin-top: 2rem;
+    text-align: center;
+    margin-top: 0; /* Removed margin-top to eliminate vertical space */
 }
 
 .tech-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem; /* Reduced margin-top */
 }
 
-.tech-icons img {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
-  transition: transform 0.3s ease;
-}
+    .tech-icons img {
+        width: 40px; /* Reduced size by 20% (80% of 50px) */
+        height: 40px; /* Reduced size by 20% (80% of 50px) */
+        transition: transform 0.3s ease;
+    }
 
-.tech-icons img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
+        .tech-icons img:hover {
+            transform: scale(1.1);
+        }
 
 /* Footer Styles */
 footer {
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.footer-icons img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
+    .footer-icons img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+    }
 
-.footer-icons img:hover {
-  transform: scale(1.1);
-}
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  body {
-    font-size: 1rem; /* Even smaller for mobile */
-  }
+    body {
+        font-size: 1rem;
+    }
 
-  h1 {
-    font-size: 1.75rem; /* Smaller for mobile */
-  }
+    h1 {
+        font-size: 1.75rem;
+    }
 
-  h2 {
-    font-size: 1.5rem; /* Smaller for mobile */
-  }
+    h2 {
+        font-size: 1.5rem;
+    }
 
-  h3 {
-    font-size: 1.25rem; /* Smaller for mobile */
-  }
+    h3 {
+        font-size: 1.25rem;
+    }
 
-  h4 {
-    font-size: 1.1rem; /* Smaller for mobile */
-  }
+    h4 {
+        font-size: 1.1rem;
+    }
 
-  h5 {
-    font-size: 1rem; /* Smaller for mobile */
-  }
+    h5 {
+        font-size: 1rem;
+    }
 
-  h6 {
-    font-size: 0.9rem; /* Smaller for mobile */
-  }
+    h6 {
+        font-size: 0.9rem;
+    }
 
-  .name-phosphorescent {
-    font-size: 1.5rem; /* Smaller for mobile */
-    white-space: nowrap; /* Ensure no line breaks on mobile */
-  }
+    .name-phosphorescent {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+
+    /* Adjust [Open All] for mobile */
+    .open-all {
+        right: 0.5rem;
+        top: 0.5rem;
+    }
+}
+
+/* Play Font Classes */
+.play-regular {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.play-bold {
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Project Description Styles */
+.project-description {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-top: 1rem;
 }
